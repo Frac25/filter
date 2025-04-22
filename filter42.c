@@ -5,13 +5,13 @@
 
 int filter(char *a)
 {
-	char buf[2];
+	char buf[1];
 	int nb_read;
 	char *s;
 	int i;
 
 	buf[0] = '\0';
-	buf[1] = '\0';
+//	buf[1] = '\0';
 	s = NULL;
 	nb_read = 1;
 
@@ -38,12 +38,12 @@ int filter(char *a)
 
 		s[i] = '\0';
 
-		printf("filtrer : s = %s         et a = %s\n", s, a);
+		printf("filter : s = %s         et a = %s\n", s, a);
 	}
 	return(0);
 }
 
-int main(char argc, char **argv)
+int main(int argc, char **argv)
 {
 	if(argc != 2)
 	{
