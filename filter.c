@@ -10,10 +10,10 @@
 int ft_strlen(char *c)
 {
 	int i = 0;
-	printf("i = %d\n", i);
+//	printf("i = %d\n", i);
 	while(c && c[i])
 		i++;
-	printf("i = %d\n", i);
+//	printf("i = %d\n", i);
 	return(i);
 }
 
@@ -53,11 +53,11 @@ char *ft_read(void)
 	char *c = NULL;
 	int c_size = 0;
 
-printf("passe0\n");
+//printf("passe0\n");
 //	while(1)
 //	{
 		read_size = read(0, buf, BUFFER_SIZE);
-		printf("passe1 read_size = %d\n", read_size);
+//		printf("passe1 read_size = %d\n", read_size);
 		if(read_size < 0)
 		{
 			perror("Error");
@@ -67,22 +67,22 @@ printf("passe0\n");
 			return(c);
 		else
 		{
-			printf("passe2 ft_strlen(c) = %d\n", ft_strlen(c));
+//			printf("passe2 ft_strlen(c) = %d\n", ft_strlen(c));
 			c_size = ft_strlen(c) + read_size;
-			printf("c_size = %d\n", c_size);
+//			printf("c_size = %d\n", c_size);
 			c = realloc(c, c_size + 1);
 			if(c < 0)
 			{
 				perror("Error");
 				return(NULL);
 			}
-			printf("c_size = %d   read_size = %d\n", c_size, read_size);
+//			printf("c_size = %d   read_size = %d\n", c_size, read_size);
 			c[c_size] = '\0';
 			while(read_size > 0)
 			{
 				c[c_size - 1] = buf[read_size - 1];
 				read_size--;
-				printf("c = %s\n", c);
+//				printf("c = %s\n", c);
 			}
 		}
 //	}
@@ -99,9 +99,9 @@ int main(int argc, char **argv)
 	}
 
 //	while(1)
-	printf("passe00\n");
+//	printf("passe00\n");
 	c = ft_read();
-	printf("c = %s\n", c);
+//	printf("c = %s\n", c);
 //	replace(c, argv[1]);
 
 //	printf("\n BUFFER_SIZE = %d fin\n", BUFFER_SIZE);
